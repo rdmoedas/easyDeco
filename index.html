@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Cadastro EasyDeco</title>
+</head>
+<body>
+  <div class="container">
+    <div>
+      <h1>Crie sua conta</h1>
+    </div>
+    <form action="" method="post" id="form">
+      <div>
+        <label for="fullName">Nome completo:</label>
+      </div>
+      <div>
+        <input 
+          type="text" 
+          name="fullName" 
+          id="fullName"
+          placeholder="Nome Completo"
+          pattern="[A-zÀ-ž ]{3,}"
+          title="Porfavor, preencha seu nome completo, apenas letras são aceitas"
+          required
+        >
+      </div>
+      <div>
+        <label for="email">Email:</label> 
+      </div>
+      <div>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="email@email.com"
+          title="Seu email precisa ter um dominio valido"
+          required
+        >
+      </div>
+      <div>
+        <label for="password">Senha:</label> 
+      </div>
+      <div>
+        <input 
+          type="password" 
+          name="password" 
+          id="password"
+          placeholder="crie uma senha"
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$"
+          title="Precisa de pelo menos 1 número, 1 letra minuscula, 1 letra maiuscula e 1 caracter especial."
+          minlength="8"
+          maxlength="14"
+          required
+        >
+      </div>
+      <div>
+        <label for="passwordRepeat">Repetir a senha:</label> 
+      </div>
+      <div>
+        <input 
+          type="passwordRepeat" 
+          name="passwordRepeat" 
+          id="passwordRepeat"
+          minlength="8"
+          maxlength="14"
+          placeholder="digite a senha novamente"
+          title="Repita sua senha"
+          required
+        >
+      </div>
+      <div class="button-area">
+        <button type="submit">Cadastrar</button>
+        <button type="reset">Reiniciar</button>
+      </div>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
