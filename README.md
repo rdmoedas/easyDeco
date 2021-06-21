@@ -1,6 +1,7 @@
 # Sobre o formulário
 
 Formulário html que envia o método "post".
+
 Os seguintes campos são passados:
 
 Nome completo (name="fullName"), 

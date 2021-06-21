@@ -53,7 +53,6 @@ function formSubmit(event) {
   if(checkRepeatPassword && checkPasswordSafe && checkPasswordRepetition) {
     alert('Conta cadastrada com sucesso');
   } else {
-    console.log('Erro')
     event.preventDefault();
   }
 }
