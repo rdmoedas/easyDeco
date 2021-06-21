@@ -2,6 +2,7 @@
 
 Formulário html que envia o método "post".
 Os seguintes campos são passados:
+
 Nome completo (name="fullName"), 
 Email (name="email"),
 Senha (name="password"),
