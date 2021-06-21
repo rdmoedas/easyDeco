@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,74 +8,99 @@
 </head>
 <body>
   <div class="container">
-    <div>
-      <h1>Crie sua conta</h1>
+    <div class="form">
+      <div>
+        <h1>Crie sua conta</h1>
+      </div>
+      <form action="" method="post" id="form">
+        <div class="form-label">
+          <label for="fullName">Nome completo:</label>
+        </div>
+        <div>
+          <input 
+            type="text" 
+            name="fullName" 
+            id="fullName"
+            placeholder="Nome Completo"
+            pattern="[A-zÀ-ž ]{3,}"
+            title="Porfavor, preencha seu nome completo, apenas letras são aceitas"
+            required
+          >
+        </div>
+        <div class="form-label">
+          <label for="email">Email:</label> 
+        </div>
+        <div>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="email@email.com"
+            title="Seu email precisa ter um dominio valido"
+            required
+          >
+        </div>
+        <div class="form-label">
+          <label for="password">Senha:</label> 
+        </div>
+        <div>
+          <input 
+            type="text" 
+            name="password" 
+            id="password"
+            placeholder="crie uma senha"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,14}$"
+            title='A senha precisa ter no mínimo 8 e no máximo 14 caracteres.&#9;Precisa de pelo menos 1 letra maiuscula, 1 letra minuscula, 1 número e  1 caracter especial.&#9;Não é permitido repetir a mesma sequencia de caracteres'
+            minlength="8"
+            maxlength="14"
+            required
+          >
+        </div>
+        <div id="passwordHelp" class="invisible">
+          <p>Sua senha precisa ter:</p>
+          <ul>
+            <li>No mínimo de 8 caracteres</li>
+            <li>No máximo de 14 caracteres</li>
+          </ul>
+          <p>Obrigatório pelo menos um:</p>
+          <ul>
+            <li>um caracter maíusculo</li>
+            <li>um caracter minúsculo</li>
+            <li>um caracter especial</li>
+            <li>Não é permitido repetir a mesma sequencia de caracteres</li>
+          </ul>
+        </div>
+        <div class="form-label">
+          <label for="passwordRepeat">Repetir a senha:</label> 
+        </div>
+        <div>
+          <input 
+            type="text" 
+            name="passwordRepeat" 
+            id="passwordRepeat"
+            minlength="8"
+            maxlength="14"
+            placeholder="digite a senha novamente"
+            title="Por favor repita a senha escolhida"
+            required
+          >
+        </div>
+        <div class="button-area">
+          <button type="submit">Cadastrar</button>
+          <button type="reset">Reiniciar</button>
+        </div>
+      </form>
     </div>
-    <form action="" method="post" id="form">
-      <div>
-        <label for="fullName">Nome completo:</label>
-      </div>
-      <div>
-        <input 
-          type="text" 
-          name="fullName" 
-          id="fullName"
-          placeholder="Nome Completo"
-          pattern="[A-zÀ-ž ]{3,}"
-          title="Porfavor, preencha seu nome completo, apenas letras são aceitas"
-          required
-        >
-      </div>
-      <div>
-        <label for="email">Email:</label> 
-      </div>
-      <div>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="email@email.com"
-          title="Seu email precisa ter um dominio valido"
-          required
-        >
-      </div>
-      <div>
-        <label for="password">Senha:</label> 
-      </div>
-      <div>
-        <input 
-          type="password" 
-          name="password" 
-          id="password"
-          placeholder="crie uma senha"
-          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$"
-          title="Precisa de pelo menos 1 número, 1 letra minuscula, 1 letra maiuscula e 1 caracter especial."
-          minlength="8"
-          maxlength="14"
-          required
-        >
-      </div>
-      <div>
-        <label for="passwordRepeat">Repetir a senha:</label> 
-      </div>
-      <div>
-        <input 
-          type="passwordRepeat" 
-          name="passwordRepeat" 
-          id="passwordRepeat"
-          minlength="8"
-          maxlength="14"
-          placeholder="digite a senha novamente"
-          title="Repita sua senha"
-          required
-        >
-      </div>
-      <div class="button-area">
-        <button type="submit">Cadastrar</button>
-        <button type="reset">Reiniciar</button>
-      </div>
-    </form>
   </div>
+          <!-- <div>
+          <button id="fill-B">Preencher password igual</button>
+        </div>
+        <div>
+          <button id="fill-BDif">Preencher password dif</button>
+        </div>
+        <div>
+          <button id="fill-B4">Password Erro Regra 4</button>
+        </div> -->
   <script src="script.js"></script>
 </body>
 </html>
