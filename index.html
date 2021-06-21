@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/3c8ea2786d.js" crossorigin="anonymous"></script>
   <title>Cadastro EasyDeco</title>
 </head>
 <body>
@@ -45,7 +46,7 @@
         </div>
         <div>
           <input 
-            type="text" 
+            type="password" 
             name="password" 
             id="password"
             placeholder="crie uma senha"
@@ -57,17 +58,15 @@
           >
         </div>
         <div id="passwordHelp" class="invisible">
-          <p>Sua senha precisa ter:</p>
+          Sua senha precisa ter:
           <ul>
             <li>No mínimo de 8 caracteres</li>
             <li>No máximo de 14 caracteres</li>
-          </ul>
-          <p>Obrigatório pelo menos um:</p>
-          <ul>
-            <li>um caracter maíusculo</li>
-            <li>um caracter minúsculo</li>
-            <li>um caracter especial</li>
-            <li>Não é permitido repetir a mesma sequencia de caracteres</li>
+            <li>pelo menos um caracter maíusculo</li>
+            <li>pelo menos um caracter minúsculo</li>
+            <li>pelo menos um número</li>
+            <li>pelo menos um caracter especial</li>
+            <li>Não é permitido repetir <div> a mesma sequencia de caracteres</div></li>
           </ul>
         </div>
         <div class="form-label">
@@ -75,7 +74,7 @@
         </div>
         <div>
           <input 
-            type="text" 
+            type="password" 
             name="passwordRepeat" 
             id="passwordRepeat"
             minlength="8"
@@ -85,14 +84,18 @@
             required
           >
         </div>
+        <div id="passwordRepeatHelp" class="invisible passwordRepeatHelp">
+          <i class="fas fa-exclamation-circle icon"></i> Por favor repita a senha escolhida
+        </div>
         <div class="button-area">
           <button type="submit">Cadastrar</button>
           <button type="reset">Reiniciar</button>
         </div>
       </form>
     </div>
-  </div>
-          <!-- <div>
+
+    <div class="form-test">
+        <div>
           <button id="fill-B">Preencher password igual</button>
         </div>
         <div>
@@ -100,7 +103,10 @@
         </div>
         <div>
           <button id="fill-B4">Password Erro Regra 4</button>
-        </div> -->
+        </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

@@ -1,7 +1,3 @@
-
-// Verificação do nome, remover ' ' sequidos
-
-// trim validation
 var fillButton = document.getElementById('fill-B');
 var fillButtonDif = document.getElementById('fill-BDif');
 var fillButton4 = document.getElementById('fill-B4');
@@ -13,16 +9,22 @@ var password = document.getElementById('password');
 var passwordRepeat = document.getElementById('passwordRepeat');
 
 var passwordHelp = document.getElementById('passwordHelp');
+var passwordRepeatHelp = document.getElementById('passwordRepeatHelp');
 
 
 password.onfocus = showPasswordHelp;
+password.onblur = removePasswordHelp;
 
 fillButton.onclick = preencheForm;
 fillButtonDif.onclick = preencheFormDif;
 fillButton4.onclick = preencheFormB4;
 
 function showPasswordHelp() {
-  // passwordHelp.classList.remove('invisible');
+  passwordHelp.classList.remove('invisible');
+}
+
+function removePasswordHelp() {
+  passwordHelp.classList.add('invisible');
 }
 
 function preencheForm() {
@@ -35,7 +37,7 @@ function preencheForm() {
 function preencheFormDif() {
   fullName.value = 'Senhas Diferentes';
   email.value = 'email@email.com';
-  password.value = 'aaaaa123123A';
+  password.value = 'asd465A#';
   passwordRepeat.value = 'vcx546B@';
 }
 
@@ -48,10 +50,10 @@ function preencheFormB4() {
 
 function comparePassword(password, passwordRepeat) {
   if(password.value !== passwordRepeat.value) {
-    console.log('senhas diferentes')
+    passwordRepeatHelp.classList.remove('invisible')
     return false
   } else {
-    console.log('senhas iguais')
+    passwordRepeatHelp.classList.add('invisible')
     return true
   }
 }
@@ -60,46 +62,41 @@ function checkPassword(passwordString) {
   let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,14}$/g;
   let regexTest = passwordRegex.test(passwordString.value);
   if(regexTest){
-    console.log('senha segura');
     return true;
   } else {
-    console.log('senha ruim');
     return false;
   }
 }
 
-function checkEmail(email) {
-  let emailRegex = new RegExp();
-  let emailTest = emailRegex.test(email.value);
+// function checkEmail(email) {
+//   let emailRegex = new RegExp();
+//   let emailTest = emailRegex.test(email.value);
 
-}
+// }
 
 function checkRepetition(passwordString) {
   let noRepeatRegex = /([\w!@#$%^&*_=+\-]{2,}).*?\1/g;
-  // let noRepeatRegex = new RegExp("asd465A#as");
-  // console.log('regex', noRepeatRegex);
   let noRepeatTest = noRepeatRegex.test(passwordString.value);
-  // console.log('password', passwordString.value);
-  // console.log('regex test', noRepeatTest);
   if(!noRepeatTest){
-    console.log('password obedece regra 4', true)
+    passwordHelp.classList.add('invisible')
     return true;
   } else {
-    console.log('não obedeceu a regra 4', false);
+    passwordHelp.classList.remove('invisible')
     return false;
   }
 }
 
 function formSubmit(event) {
-  event.preventDefault();
-  let temp = comparePassword(password, passwordRepeat);
-  let tempCheck = checkPassword(password);
-  let tempCheck3 = checkRepetition(password);
-  if(temp && tempCheck && tempCheck3) {
-    console.log('Valido')
+  let checkRepeatPassword = comparePassword(password, passwordRepeat);
+  let checkPasswordSafe = checkPassword(password);
+  let checkPasswordRepetition = checkRepetition(password);
+  if(checkRepeatPassword && checkPasswordSafe && checkPasswordRepetition) {
+    alert('Conta cadastrada com sucesso');
     // this.submit()
+    // event.preventDefault();
   } else {
     console.log('Erro')
+    event.preventDefault();
   }
 }
 

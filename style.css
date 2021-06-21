@@ -4,18 +4,16 @@
   box-sizing: border-box;
   text-decoration: none;
   font-family: sans-serif;
+
 }
 
 body {
-  /* background: linear-gradient(#E79F39, #aa9980); */
-  /* background-image: url(bgimage.png); */
   background: 
   linear-gradient(
     rgba(231,159,57,0.8),
     rgba(231,159,57,0.8)
     ),
     url(bgimage.png);
-  /* background-size: cover; */
 }
 
 .container {
@@ -23,7 +21,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 50px 16px;
+  padding: 3vh 16px;
   align-content: center;
 }
 
@@ -37,7 +35,7 @@ body {
   border-radius: 10px;
   box-shadow: 10px 10px 10px 4px rgba(0,0,0,0.4);
   padding: 20px 20px;
-  /* height: 75vh; */
+  width: 80vw;
 }
 
 h1 {
@@ -45,32 +43,31 @@ h1 {
   padding: 30px 16px;
 }
 
-.form-title {
-
-}
-
-/* label {
-  color: #EDEAE3;
-  font-size: 1.7rem;
-  padding: 10px 20px;
-  width: 300px;
-} */
 
 .form-label {
   color: #EDEAE3;
+  text-align: center;
   padding: 10px 20px;
   margin: 10px 0px;
 }
 
 label {
   color: #EDEAE3;
-  /* padding: 10px 20px; */
+  text-align: center;
 }
 
 input {
   padding: 15px 20px;
   border-radius: 15px;
   border: none;
+  text-align: center;
+  width: 65vw;
+}
+
+input:focus {
+  border-radius: 15px !important;
+  outline: none;
+  box-shadow: 0 0 3px 2px rgba(231,159,57,0.9);
 }
 
 ::placeholder {
@@ -84,8 +81,8 @@ input {
 }
 
 button {
-  padding: 10px 15px;
-  margin: 5px 0;
+  padding: 15px 15px;
+  margin: 15px 5px;
   background-color: rgba(96, 29, 70, 0.65);
   color: #EDEAE3;
   border: none;
@@ -98,22 +95,56 @@ button:nth-child(2){
   color: #EDEAE3;
 }
 
-form {
-  /* max-width: 30%; */
-  
+.invisible {
+  display: none !important;
 }
 
-.invisible {
-  display: none;
+#passwordHelp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 8px;
+  padding: 8px;
+  color: #EDEAE3;
 }
 
 #passwordHelp ul li{
-  /* max-width: 50%; */
+  padding: 2px;
 }
 
-/* Formatação dos campos */
+.passwordRepeatHelp {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 8px;
+  padding: 8px;
+  color: #ede8e3;
+  text-align: center;
+  font-weight: 500;
+}
 
-@media (min-width: 600px){
+.icon {
+  padding-right: 5px;
+}
+
+
+.form-test {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #747C81;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px 4px rgba(0,0,0,0.4);
+  padding: 20px 20px;
+  margin-top: 25px;
+  width: 45vw;
+}
+
+@media (min-width: 800px){
  
   .form {
     width: 45vw;
@@ -122,6 +153,17 @@ form {
   input {
     width: 30vw;
 
+  }
+
+  .button-area {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-grow: 1;
+  }
+
+  button {
+    flex-grow: 1;
   }
    
   }
