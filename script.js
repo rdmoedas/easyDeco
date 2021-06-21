@@ -1,23 +1,10 @@
-var fillButton = document.getElementById('fill-B');
-var fillButtonDif = document.getElementById('fill-BDif');
-var fillButton4 = document.getElementById('fill-B4');
-
 var form = document.getElementById('form');
 var fullName = document.getElementById('fullName');
 var email = document.getElementById('email');
 var password = document.getElementById('password');
 var passwordRepeat = document.getElementById('passwordRepeat');
-
 var passwordHelp = document.getElementById('passwordHelp');
 var passwordRepeatHelp = document.getElementById('passwordRepeatHelp');
-
-
-password.onfocus = showPasswordHelp;
-password.onblur = removePasswordHelp;
-
-fillButton.onclick = preencheForm;
-fillButtonDif.onclick = preencheFormDif;
-fillButton4.onclick = preencheFormB4;
 
 function showPasswordHelp() {
   passwordHelp.classList.remove('invisible');
@@ -25,27 +12,6 @@ function showPasswordHelp() {
 
 function removePasswordHelp() {
   passwordHelp.classList.add('invisible');
-}
-
-function preencheForm() {
-  fullName.value = 'Senhas Iguais';
-  email.value = 'email@email.com';
-  password.value = 'asd465A#';
-  passwordRepeat.value = 'asd465A#';
-}
-
-function preencheFormDif() {
-  fullName.value = 'Senhas Diferentes';
-  email.value = 'email@email.com';
-  password.value = 'asd465A#';
-  passwordRepeat.value = 'vcx546B@';
-}
-
-function preencheFormB4() {
-  fullName.value = 'Senhas Repetida Erro Four';
-  email.value = 'email@email.com';
-  password.value = 'asd465A#as';
-  passwordRepeat.value = 'asd465A#as';
 }
 
 function comparePassword(password, passwordRepeat) {
@@ -68,12 +34,6 @@ function checkPassword(passwordString) {
   }
 }
 
-// function checkEmail(email) {
-//   let emailRegex = new RegExp();
-//   let emailTest = emailRegex.test(email.value);
-
-// }
-
 function checkRepetition(passwordString) {
   let noRepeatRegex = /([\w!@#$%^&*_=+\-]{2,}).*?\1/g;
   let noRepeatTest = noRepeatRegex.test(passwordString.value);
@@ -92,12 +52,12 @@ function formSubmit(event) {
   let checkPasswordRepetition = checkRepetition(password);
   if(checkRepeatPassword && checkPasswordSafe && checkPasswordRepetition) {
     alert('Conta cadastrada com sucesso');
-    // this.submit()
-    // event.preventDefault();
   } else {
     console.log('Erro')
     event.preventDefault();
   }
 }
 
+password.onfocus = showPasswordHelp;
+password.onblur = removePasswordHelp;
 form.addEventListener('submit', formSubmit);

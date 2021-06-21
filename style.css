@@ -8,12 +8,7 @@
 }
 
 body {
-  background: 
-  linear-gradient(
-    rgba(231,159,57,0.8),
-    rgba(231,159,57,0.8)
-    ),
-    url(bgimage.png);
+  background-color: #E79F39;
 }
 
 .container {
@@ -40,7 +35,7 @@ body {
 
 h1 {
   color: #EDEAE3;
-  padding: 30px 16px;
+  padding: 10% 16px;
 }
 
 
@@ -124,11 +119,6 @@ button:nth-child(2){
   text-align: center;
   font-weight: 500;
 }
-
-.icon {
-  padding-right: 5px;
-}
-
 
 .form-test {
   display: flex;
